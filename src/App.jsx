@@ -27,25 +27,17 @@ const App = () => {
       <AutoSuggestion
         fetchSuggestions={fetchSuggestions}
         onSelect={handleSelect}
-        onBlur={() => {}}
-        onChange={() => {}}
-        onFocus={() => {}}
         datakey="title"
         loading={<>Loading...</>}
       />
       {selectedProduct && (
-        <div className="mt-10 p-4 border border-gray-500 rounded-2xl shadow-xl">
+        <div className="mt-10 p-4 border rounded-2xl shadow-xl">
           <h2 className="text-2xl font-bold">{selectedProduct.title}</h2>
           <p>{selectedProduct.description}</p>
           <p>
             <strong>Price:</strong> ${selectedProduct.price}
           </p>
-          {/* Add any other product details you want to display */}
-          <p>
-            <strong>Thumbnail:</strong>{" "}
-            <img src={selectedProduct.thumbnail} alt="" />
-          </p>
-          {/* Add any other product details you want to display */}
+          <img src={selectedProduct.thumbnail} alt={selectedProduct.title} />
         </div>
       )}
     </div>
