@@ -34,11 +34,16 @@ const App = () => {
         loading={<>Loading...</>}
       />
       {selectedProduct && (
-        <div className="mt-10 p-4 border border-gray-300 rounded">
+        <div className="mt-10 p-4 border border-gray-500 rounded-2xl shadow-xl">
           <h2 className="text-2xl font-bold">{selectedProduct.title}</h2>
           <p>{selectedProduct.description}</p>
           <p>
             <strong>Price:</strong> ${selectedProduct.price}
+          </p>
+          {/* Add any other product details you want to display */}
+          <p>
+            <strong>Thumbnail:</strong>{" "}
+            <img src={selectedProduct.thumbnail} alt="" />
           </p>
           {/* Add any other product details you want to display */}
         </div>
